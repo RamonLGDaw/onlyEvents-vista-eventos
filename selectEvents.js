@@ -7,6 +7,16 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(datos => {
             const selector = document.createElement('select');
             selector.setAttribute('id', 'selectorEventos');
+            selector.classList.add('form-select', 'mb-3'); // Agregar clases de Bootstrap al select
+
+            // Opción deshabilitada y seleccionada por defecto
+            const defaultOption = document.createElement('option');
+            defaultOption.setAttribute('value', '');
+            defaultOption.textContent = 'Tipos de eventos';
+            defaultOption.setAttribute('disabled', true);
+            defaultOption.setAttribute('selected', true);
+            selector.appendChild(defaultOption);
+
             datos.tipos_evento.forEach(item => {
                 const opcionSelect = document.createElement('option');
                 opcionSelect.setAttribute('value', item.id);
