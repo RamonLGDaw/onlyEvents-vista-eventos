@@ -43,6 +43,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 contenedorEvento.setAttribute('id', `contenedorEventos${tipo.id}`);
                 contenedorEvento.classList.add('contenedorEventos');
                 contenedorEvento.style.display = 'none'; // Ocultar por defecto
+                contenedorEvento.style.display = 'flex'; // Agregar estilo flex
+
                 // En cada contenedor guarda los eventos que coinciden con el tipo de contenedor
                 datos.eventos.forEach(evento => {
                     if (evento.tipo_evento_id == tipo.id) {
